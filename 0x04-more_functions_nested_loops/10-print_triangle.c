@@ -1,34 +1,26 @@
 #include "main.h"
 
 /**
- * print_triangle -  checks for checks for a digit (0 through 9).
- * @size: size -  Variable
- * Return: Always 0.
+ * print_triangle - print a triangle pattern
+ * @size: l
+ * Return: void
  */
 void print_triangle(int size)
 {
-    int x, y;
+	int i, j, x;
 
-    if (size > 0)
-    {
-        for (x = 1; x <= size; x++)
-        {
-            for (y = 1; y <= size; y++)
-            {
-                if (y <= size - x)
-                {
-                    _putchar(' ');
-                }
-                else
-                {
-                    _putchar('#');
-                }
-            }
-            _putchar('\n');
-        }
-    }
-    else
-    {
-        _putchar('\n');
-    }
+	if (size <= 0)
+	{
+		_putchar('\n');
+		return;
+	}
+	for (i = 1; i <= size; i++)
+	{
+		for (j = 1; j <= size; j++)
+		{
+			x = j < (size + 1) - i ? ' ' : '#';
+			_putchar(x);
+		}
+		_putchar('\n');
+	}
 }
